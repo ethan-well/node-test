@@ -1,4 +1,4 @@
-var chatServer = require('./lib/caht_server');
+var chatServer = require('./lib/chat_server');
 
 var http = require('http');
 var fs = require('fs');
