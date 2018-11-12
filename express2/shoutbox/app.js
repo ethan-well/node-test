@@ -7,6 +7,8 @@ var logger = require('morgan');
 const entries = require('./routes/entries');
 const validate = require('./middleware/validate');
 
+const register = require('./routes/register');
+
 var app = express();
 
 // view engine setup
@@ -25,6 +27,7 @@ app.post('/post',
          validate.required('entry[title]'),
          validate.lengthAbove('entry[body]', 4),
          entries.submit);
+app.get('/register', register.form);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

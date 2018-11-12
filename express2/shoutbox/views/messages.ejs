@@ -1,0 +1,8 @@
+<% if (locals.messages) { %>
+  <% messsages.forEach((message) => {   %>
+    <p class='<%= message.type %>'>
+      <%= messsage.content %>
+    </p>
+  <% }) %>
+  <% removeMessages() %>
+<% }%>
