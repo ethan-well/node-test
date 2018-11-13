@@ -1,6 +1,6 @@
 const express = require('express');
 
-function message(res) {
+function message(req) {
   return (msg, type) => {
     type = type || 'info';
     let sess = req.session;

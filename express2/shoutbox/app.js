@@ -37,6 +37,7 @@ app.post('/post',
          validate.lengthAbove('entry[body]', 4),
          entries.submit);
 app.get('/register', register.form);
+app.post('/register', register.submit);
 app.get('/login', login.form);
 app.post('/login', login.submit);
 app.get('/logout', login.logout);
