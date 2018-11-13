@@ -9,6 +9,7 @@ const validate = require('./middleware/validate');
 const register = require('./routes/register');
 const messages = require('./middleware/messages');
 const login = require('./routes/login');
+const user = require('./middleware/user');
 
 var app = express();
 
@@ -25,9 +26,10 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(user);
 app.use(messages);
 
-app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', entries.list);
 app.get('/post', entries.form);
 app.post('/post',
