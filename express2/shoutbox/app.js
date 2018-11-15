@@ -10,6 +10,7 @@ const register = require('./routes/register');
 const messages = require('./middleware/messages');
 const login = require('./routes/login');
 const user = require('./middleware/user');
+const api = require('./routes/api');
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use(session({
   saveUninitialized: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/api', api.auth);
 app.use(user);
 app.use(messages);
 
@@ -41,6 +43,7 @@ app.post('/register', register.submit);
 app.get('/login', login.form);
 app.post('/login', login.submit);
 app.get('/logout', login.logout);
+app.get('/api/user/:id', api.user);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
