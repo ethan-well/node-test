@@ -16,4 +16,4 @@ exports.user = (req, res, next) {
     if (!user.id) return res.sendStatus(404);
     res.json(user);
   });
-}
+};
