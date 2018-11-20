@@ -1,7 +1,7 @@
 const pg = require('pg');
-const db = new pg.client({ database: 'articles' });
+const db = new pg.Client({ database: 'articles' });
 
-db.connect((err, client) {
+db.connect((err, client) => {
   if (err) throw err;
   console.log('connect to database', db.database);
   db.end();
