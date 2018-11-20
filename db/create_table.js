@@ -2,9 +2,8 @@ const pg = require('pg');
 const db = new pg.Client({ database: 'articles' });
 
 db.connect((err, client) => {
-  if (err) throw err;
+  if (err) console.log(err);
   console.log('connect to database', db.database);
-  db.end();
 });
 
 db.query(`
@@ -14,7 +13,6 @@ db.query(`
     body text
   );
   `, (err, result) => {
-  if (err) throw err;
   console.log('Create table "snipptes"');
   db.end();
 });
