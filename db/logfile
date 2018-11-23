@@ -1,0 +1,13 @@
+2018-11-21 07:33:58.398 CST [2375] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-21 07:33:58.398 CST [2375] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-21 07:33:58.401 CST [2375] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-21 07:33:58.457 CST [2376] LOG:  database system was shut down at 2018-11-21 01:57:39 CST
+2018-11-21 07:33:58.472 CST [2375] LOG:  database system is ready to accept connections
+2018-11-21 07:34:32.745 CST [2407] ERROR:  syntax error at or near "EXISTES" at character 24
+2018-11-21 07:34:32.745 CST [2407] STATEMENT:  
+	  CREATE TABLE IF NOT EXISTES snippets (
+	    id SERIAL,
+	    PRIMARY KEY(id),
+	    body text
+	  );
+	  
