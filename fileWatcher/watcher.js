@@ -5,7 +5,7 @@ class Watcher extends events.EventEmitter {
   constructor(watchDir, processedDir) {
     super();
     this.watchDir = watchDir;
-    this.protectedDir = processedDir;
+    this.processedDir = processedDir;
   }
 
   watch() {
